@@ -29,9 +29,9 @@ export function encounterPokemon(id){
         const newEncounter = data.find(pokemon => Number(pokemon.id) === Number(id));
          pokedex.push({ 
              id,
+             name: data.pokemon,
              encountered: 1,
              captured: 0,
-             name: data.pokemon
          });
     }
     setPokedex(pokedex);
