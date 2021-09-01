@@ -33,57 +33,61 @@ export function getRandomPokemon() {
 // if pokeCaught > 10, redirect to results
 
 
-let pokeCaught = 0
+// let pokeCaught = 0
 
-export function renderNewPokemon(){
-    const pokeEl1 = document.getElementById('poke1');
-    const pokeEl2 = document.getElementById('poke2');
-    const pokeEl3 = document.getElementById('poke3');
+// export function renderNewPokemon(){
+//     const pokeEl1 = document.getElementById('poke1');
+//     const pokeEl2 = document.getElementById('poke2');
+//     const pokeEl3 = document.getElementById('poke3');
 
-    const pokeImg1 = document.getElementById('poke-img-1');
-    const pokeImg2 = document.getElementById('poke-img-2');
-    const pokeImg3 = document.getElementById('poke-img-3');
+//     const pokeImg1 = document.getElementById('poke-img-1');
+//     const pokeImg2 = document.getElementById('poke-img-2');
+//     const pokeImg3 = document.getElementById('poke-img-3');
 
-    const getNewThree = getRandomPokemon();
+//     const getNewThree = getRandomPokemon();
 
-// getRandomPokemon();
-// encounterPokemon ();
-encounterPokemon(getNewThree[0].id);
-pokeEl1.value = getNewThree[0].id;
-pokeEl2.value = getNewThree[1].id;
-pokeEl3.value = getNewThree[2].id;
+// // getRandomPokemon();
+// // encounterPokemon ();
+// encounterPokemon(getNewThree[0].id);
+// pokeEl1.value = getNewThree[0].id;
+// pokeEl2.value = getNewThree[1].id;
+// pokeEl3.value = getNewThree[2].id;
 
-}
+// pokeEl1.checked = false;
+// pokeEl2.checked = false;
+// pokeEl3.checked = false;
+
+// }
 
 
-export function encounterPokemon(id){
-  getPokedex()
-  ++ times encountered
-  if !encountered, newObject(id: 5, encountered:1 caught:0)
-  setPokedex()
-}
+// export function encounterPokemon(id){
+//   getPokedex()
+//   ++ times encountered
+//   if !encountered, newObject(id: 5, encountered:1 caught:0)
+//   setPokedex()
+// }
 
-export function setPokedex(pokedex){
-//   make stringy, store in local
-const pokeString = JSON.stringify(pokedex);
-localStorage.setItem(pokedex, pokeString);
-}
+// export function setPokedex(pokedex){
+// //   make stringy, store in local
+// const pokeString = JSON.stringify(pokedex);
+// localStorage.setItem(pokedex, pokeString);
+// }
 
-export function getPokedex(){
-//   de-string, get from local
-const pokeString = localStorage.getItem(pokedex);
-if (!pokeString){
-    return [];
-}
-}
+// export function getPokedex(){
+// //   de-string, get from local
+// const pokeString = localStorage.getItem(pokedex);
+// if (!pokeString){
+//     return [];
+// }
+// }
 
-catchPokemon(id){
-  getPokedex()
-  caught ++ (in local)
-  setPokedex()
-}
+// catchPokemon(id){
+//   getPokedex()
+//   caught ++ (in local)
+//   setPokedex()
+// }
 
-howManyCaughtSoFar()
+// howManyCaughtSoFar()
 
 // renderNewPokemon()
 // - We need to find three unique pokemon to show the user
