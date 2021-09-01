@@ -31,8 +31,8 @@ export function getRandomPokemon() {
 
 
 export function renderNewPokemon(){
-    getRandomPokemon();
-    encounterPokemon(pokemon.id????);
+   const randomTrio = getRandomPokemon();
+    encounterPokemon(id);
 
 }
 
