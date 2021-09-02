@@ -1,16 +1,16 @@
 import data from './data.js';
-const POKEDEX = 'POKEDEX';
+
 
 // set
 export function setPokedex(pokedex){
     const stringDex = JSON.stringify(pokedex);
-    localStorage.setItem(POKEDEX, stringDex);
+    localStorage.setItem('POKEDEX', stringDex);
 }
 
 
 // get
-export function getPokedex(pokedex){
-    let stringDex = localStorage.getItem(POKEDEX);
+export function getPokedex(){
+    let stringDex = localStorage.getItem('POKEDEX');
     if (!stringDex) {
         return [];
     }
@@ -27,12 +27,12 @@ export function encounterPokemon(id){
         encountered.quantity++; 
     } else {
         const newEncounter = data.find(pokemon => Number(pokemon.id) === Number(id));
-         pokedex.push({ 
-             id,
-             name: data.pokemon,
-             encountered: 1,
-             captured: 0,
-         });
+        pokedex.push({ 
+            id,
+            name: newEncounter.pokemon,
+            encountered: 1,
+            captured: 0,
+        });
     }
     setPokedex(pokedex);
 }
