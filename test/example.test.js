@@ -24,18 +24,18 @@ test('setPokemon should store JSON data accurately', (expect) => {
 });
 
 test('Get should retrieve JSON data accurately', (expect) => {
-    const pokemon = [
+    const pokemonArray = [
         { id:5,
             quantity:25 }
     ];
-    const stringyPokemon = JSON.stringify(pokemon);  
-    localStorage.setItem('STRINGYPOKEMON', stringyPokemon);
+    const lemon = JSON.stringify(pokemonArray);  
+    localStorage.setItem('POKEDEX', lemon);
 
-    const gottenPokemon = localStorage.getItem('STRINGYPOKEMON');
-    const gotPokemon = JSON.parse(gottenPokemon);
+    localStorage.getItem('POKEDEX');
+ 
 
-    const expected = gotPokemon;
+    const expected = pokemonArray; 	
     const actual = getPokedex();
 
-    expect.equal(actual, expected);
+    expect.deepEqual(actual, expected);
 });
