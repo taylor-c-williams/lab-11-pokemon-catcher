@@ -1,19 +1,7 @@
-import { encounterPokemon, gottaCatchEmAll, getRandomPokemon } from './utils.js';
+import { gottaCatchEmAll, renderNewPokemon } from './utils.js';
 
 let captured = 0;
 const form = document.querySelector('form');
-
-function renderNewPokemon() {
-    const wildPokemon = getRandomPokemon();
-    const labels = document.querySelectorAll('label');
-
-    labels.forEach((label, i) => {
-        const pokemonItem = wildPokemon[i];
-        encounterPokemon(pokemonItem.id);
-        label.children[0].value = pokemonItem.id;
-        label.children[1].src = pokemonItem.url_image;
-    });
-}
 
 renderNewPokemon();
 
@@ -24,7 +12,7 @@ form.addEventListener('submit', (e) => {
     const selectedPokemonId = data.get('wild-pokemon');
     gottaCatchEmAll(selectedPokemonId);
     if (captured > 10) {
-        window.location = './results';
+        window.location = './results.html';
     } else {
         renderNewPokemon();
     }
