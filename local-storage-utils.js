@@ -1,12 +1,10 @@
 import data from './data.js';
 
-
 // set
 export function setPokedex(pokedex){
     const stringDex = JSON.stringify(pokedex);
     localStorage.setItem('POKEDEX', stringDex);
 }
-
 
 // get
 export function getPokedex(){
@@ -24,7 +22,7 @@ export function encounterPokemon(id){
     const encountered = pokedex.find(pokemon => Number(pokemon.id) === Number(id));
      // to refactor: pokeFind function
     if (encountered){
-        encountered.quantity++; 
+        encountered.encountered++; 
     } else {
         const newEncounter = data.find(pokemon => Number(pokemon.id) === Number(id));
         pokedex.push({ 
@@ -41,7 +39,6 @@ export function encounterPokemon(id){
 export function gottaCatchEmAll(id){
     const pokedex = getPokedex();
     const pokeFind = pokedex.find(pokemon => Number(pokemon.id) === Number(id));
-    // to refactor: pokeFind function
-    pokeFind.caught++;
+    pokeFind.captured++;
     setPokedex(pokedex);
 }
