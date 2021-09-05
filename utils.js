@@ -1,8 +1,8 @@
 import data from './data.js';
 
 // Set
-export function setPokedex(pokedex){
-    const stringDex = JSON.stringify(pokedex);
+export function setPokedex(pokedexArray){
+    const stringDex = JSON.stringify(pokedexArray);
     localStorage.setItem('POKEDEX', stringDex);
 }
 
@@ -53,8 +53,7 @@ export function renderNewPokemon() {
 //A wild data has appeared! 
 export function encounterPokemon(id){
     const pokedex = getPokedex();
-    const encountered = pokedex.find(data => Number(data.id) === Number(id));
-     // to refactor: pokeFind function
+    const encountered = pokeFind(id);
     if (encountered){
         encountered.encountered++; 
     } else {
@@ -71,8 +70,8 @@ export function encounterPokemon(id){
 
 //Catch
 export function gottaCatchEmAll(id){
+    pokeFind(id);
     const pokedex = getPokedex();
-    const pokeFind = pokedex.find(data => Number(data.id) === Number(id));
     pokeFind.captured++;
     setPokedex(pokedex);
 }
@@ -80,4 +79,9 @@ export function gottaCatchEmAll(id){
 //Get Random
 function getRandomIndex() {
     return Math.floor(Math.random() * data.length);
+}
+
+function pokeFind(id){
+    const pokedex = getPokedex();
+    pokedex.find(data => Number(data.id) === Number(id));
 }

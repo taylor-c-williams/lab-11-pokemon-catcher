@@ -1,7 +1,7 @@
 // IMPORT MODULES under test here:
 // import { example } from '../example.js';
 
-import { setPokedex, getPokedex, encounterPokemon } from '../utils.js';
+import { setPokedex, getPokedex, encounterPokemon, gottaCatchEmAll } from '../utils.js';
 
 const test = QUnit.test;
 
@@ -11,7 +11,8 @@ test('setPokemon should store JSON data accurately', (expect) => {
 
     const pokemon = [
         { id:5,
-            quantity:25 }
+            quantity:25,
+            captured: 0 }
     ];
    
     const stringyPokemon = localStorage.getItem('POKEMON');
@@ -23,11 +24,13 @@ test('setPokemon should store JSON data accurately', (expect) => {
     expect.equal(actual, expected);
 });
 
+
 //Get
 test('Get should retrieve JSON data accurately', (expect) => {
     const pokemonArray = [
         { id:5,
-            quantity:25 }
+            quantity:25,
+            captured: 0 }
     ];
 
     const lemon = JSON.stringify(pokemonArray);  
@@ -40,18 +43,42 @@ test('Get should retrieve JSON data accurately', (expect) => {
     expect.deepEqual(actual, expected);
 });
 
+
 //Encounter
-test('encounterPokemon should increase encountered property', (expect) => {
-    const pokemonArray = [
-        { id:5,
-            quantity:25, 
-            encountered:2
+test('encounterPokemon should increase encountered value', (expect) => {
+    const pokemonArray = [];
+
+    setPokedex(pokemonArray);
+    encounterPokemon(5);
+
+    const expected = [
+        { captured: 0, 
+            encountered:1,
+            id: 5,
+            name:`charmander`
         }
     ];
 
-    const expected = pokemonArray.id; 
-    const actual = encounterPokemon(Number(5));
 
-    expect.equal(actual, expected);
+    const actual = getPokedex();
+
+    expect.deepEqual(actual, expected);
 });
 
+
+//Gotta Catch 'Em All!
+test('gottaCatchEmAll should increase the captured value', (expect) => {
+
+    const dingus = [
+        { id:5,
+            quantity:25,
+            captured: 1 }
+    ];
+
+    setPokedex(dingus);
+    gottaCatchEmAll(5);
+
+    const expected = dingus;
+    const actual = getPokedex(dingus);
+    expect.deepEqual(actual, expected);
+});
