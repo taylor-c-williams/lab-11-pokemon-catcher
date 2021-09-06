@@ -1,24 +1,27 @@
 import { getPokedex } from '../utils.js';
-import data from '../data.js';
+
 
 const ctx = document.getElementById('myChart');
 const pokedex = getPokedex();
 
-const arrayOfNames = pokedex.filter(pokedex => pokedex.name);
+const arrayOfNames = pokedex.filter(pokemon => pokemon.captured > 0)
+    .map (pokemon => pokemon.name);
 console.log (arrayOfNames);
 
-const arrayOfCaptures = pokedex.filter(pokedex => pokedex.captured);
+const arrayOfCaptures = pokedex.filter(pokemon => pokemon.captured > 0)
+    .map (pokemon => pokemon.captured);
 console.log (arrayOfCaptures);
 
-// const arrayOfEncounters
+const arrayOfEncounters = pokedex.map (encountered => encountered);
+console.log (arrayOfEncounters);
 
-const myChart = new Chart(ctx, {  //eslint-disable-line
+new Chart(ctx, { 
     type: 'radar',
     data: {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
         datasets: [{
             label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            data: [121, 19, 3, 5, 2, 3],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',

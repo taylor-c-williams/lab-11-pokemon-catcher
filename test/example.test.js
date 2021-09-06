@@ -1,9 +1,8 @@
 // IMPORT MODULES under test here:
 // import { example } from '../example.js';
 
-import { setPokedex, getPokedex, encounterPokemon, gottaCatchEmAll, renderNewPokemon } from '../utils.js';
-
-import data from '../data.js';
+import { setPokedex, getPokedex, encounterPokemon, gottaCatchEmAll } from '../utils.js';
+// import data from '../data.js';
 
 const test = QUnit.test;
 
@@ -80,7 +79,11 @@ test('gottaCatchEmAll should increase the captured value', (expect) => {
     setPokedex(dingus);
     gottaCatchEmAll(5);
 
-    const expected = dingus;
+    const expected = [
+        { id:5,
+            quantity:25,
+            captured: 2 }
+    ];
     const actual = getPokedex(dingus);
     expect.deepEqual(actual, expected);
 });
@@ -88,13 +91,9 @@ test('gottaCatchEmAll should increase the captured value', (expect) => {
 //Render
 // test('renderNewPokemon should populate 3 random pokemon and 3 corresponding images', (expect) =>{
 
-//     const img = document.createElement('img');
-//     img.src = data.url_image;
-
 //     renderNewPokemon();
 
 //     const expected = dingus;
 //     const actual = getPokedex(dingus);
 //     expect.deepEqual(actual, expected);
-
-// });
+//     });
