@@ -53,35 +53,31 @@ export function renderNewPokemon() {
 //A wild data has appeared! 
 export function encounterPokemon(id){
     const pokedex = getPokedex();
-    const encountered = pokeFind(id);
-    if (encountered){
-        encountered.encountered++; 
+    const encounter = pokedex.find(pokemon => Number(pokemon.id) === Number(id));
+    if (encounter){
+        encounter.encountered ++; 
     } else {
-        const newEncounter = data.find(data => Number(data.id) === Number(id));
+        const newEncounter = data.find(pokemon => Number(pokemon.id) === Number(id));
         pokedex.push({ 
             id,
             name: newEncounter.pokemon,
-            encountered: 1,
+            encountered:1,
             captured: 0,
         });
     }
     setPokedex(pokedex);
 }
 
+
 //Catch
 export function gottaCatchEmAll(id){
-    pokeFind(id);
     const pokedex = getPokedex();
-    pokeFind.captured++;
+    const captured = pokedex.find(pokemon => Number(pokemon.id) === Number(id));
+    captured.captured++;
     setPokedex(pokedex);
 }
 
 //Get Random
 function getRandomIndex() {
     return Math.floor(Math.random() * data.length);
-}
-
-function pokeFind(id){
-    const pokedex = getPokedex();
-    pokedex.find(data => Number(data.id) === Number(id));
 }
