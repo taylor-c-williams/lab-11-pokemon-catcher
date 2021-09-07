@@ -1,7 +1,70 @@
-canvas {
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    height:100%;
+    width:100%;
+    margin:0;
+    padding:0;
+    font-family: 'Space Mono', monospace;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size:3em;
+}
+h2 {
+    font-size:2em;
+}
+
+subheader { 
+display: flex;
+justify-content: center;
+}
+
+.chart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:50px;
+}
+
+.button-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom:50px;
+    background-color: white;
 
 }
 
-.chart{
+.button-wrapper :link, :visited {
+    text-decoration: none;
+    color:black;
+    font-size:2em;
+}
 
+button{
+    border: 1px dotted;
+    background-color: white;
+    font-family: 'Space Mono', monospace;    
+}
+
+button:hover {
+	background-color: silver;
+	color: white;
+}
+
+button:active {
+	background-color: #4a4140;
+	color: white;
+	border: 1px dotted black;
+	cursor: pointer;
+	box-shadow: 5px 5px 0px 1px #848484;
 }

@@ -1,3 +1,52 @@
+*{
+    box-sizing: border-box;
+}
+
+body, html {
+    height:100%;
+    width:100%;
+    margin:0;
+    padding:0;
+    font-family: 'Space-Mono', monospace;
+    font-style: normal;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size:3em;
+    margin:50px;
+}
+
+content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size:3em;
+}
+h2 {
+    font-size:2em;
+}
+
+
+.button-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:50px;
+    background-color: white;
+}
+
+.button-wrapper :link, :visited {
+    text-decoration: none;
+    color:black;
+    font-size:2em;
+}
+
 content{
     display: flex;
     justify-content: center;
@@ -10,4 +59,31 @@ content{
     justify-content: center;
     align-items: center;
     margin:20px;
+}
+
+button {
+	font-family: 'Space-Mono', monospace;
+	color: black;
+	background-color: white;
+	border: 1px dotted black;
+	font-size: 1em;
+	cursor: pointer;
+	box-shadow: -5px 5px 0px 1px #848484;
+	position: relative;
+	z-index: 2;
+    font-size:2em;
+}
+
+button:hover {
+	background-color: silver;
+	color: white;
+}
+
+button:active {
+	font-family: 'Space-Mono', monospace;
+	background-color: #4a4140;
+	color: white;
+	border: 1px dotted black;
+	cursor: pointer;
+	box-shadow: 5px 5px 0px 1px #848484;
 }
