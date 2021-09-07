@@ -7,16 +7,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
     <title>Dr. Oak's Poke-catcher</title>
 </head>
 
 <body>
+    <video id="videoBG"  autoplay muted loop>
+        <source src="./assets/videoplayback.mp4" type="video/mp4">
+    </video>
+<div class = "content-wrapper">
     <header>
         Catch a Pokemon!
     </header>
-    <content>
+<content>
     <form>
         <label>
             <img height="300" alt="A wild Pokemon has appeared!"/>
@@ -44,6 +48,12 @@
 
 </content>
 
+</div>
+<div class="audio-wrapper">
+<audio controls id="volume-set">
+    <source src="./assets/lavendermusic.mp3" type="audio/mp3">
+</audio>
+</div>
 
     <script type="module" src="./app.js"></script>
 </body>

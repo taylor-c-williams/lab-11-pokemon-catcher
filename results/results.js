@@ -18,7 +18,7 @@ const arrayOfEncounters = pokedex
 const ctx = document.getElementById('myChart').getContext('2d');
 
 Chart.defaults.font.size = 16;
-Chart.defaults.font.family = 'Space Mono', 'monospace';
+Chart.defaults.font.family = 'DotGothic16', 'sans-serif';
 
 
 

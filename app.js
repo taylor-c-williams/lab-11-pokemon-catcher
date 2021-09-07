@@ -1,5 +1,8 @@
 import { gottaCatchEmAll, renderNewPokemon } from './utils.js';
 
+const audio = document.getElementById('volume-set');
+audio.volume = 0.07;
+
 let captured = 0;
 const form = document.querySelector('form');
 
