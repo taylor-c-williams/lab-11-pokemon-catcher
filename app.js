@@ -1,36 +1,22 @@
-import { encounterPokemon } from "./local-storage-utils"
+import { gottaCatchEmAll, renderNewPokemon } from './utils.js';
 
-// import functions
-catch, encounterPokemon, get random
-//initalize state
-let caught = 0;
+const audio = document.getElementById('volume-set');
+audio.volume = 0.07;
 
-//get 3 pkmn in array
-//define render function:
-function renderNewPokemon(){
+let captured = 0;
+const form = document.querySelector('form');
 
-}
-//for each 3 labels
+renderNewPokemon();
 
-//label's index to grab pokemon item
-
-//first child is radio button
-
-// second child is image tag 
-//change it's src
-
-renderNewPokemon()
-
-//set event listeners on form
-//inside event listener:
-
-//disable default
-//increment caught value ++
-//set formdata const
-//set const for pokemon ID data
-//data.get
-
-// call catch pokemon w ID
-//if caught > 10, redirect
-//else renderNewPokemon
-
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    captured++;
+    const data = new FormData(form);
+    const selectedPokemonId = data.get('wild-pokemon');
+    gottaCatchEmAll(selectedPokemonId);
+    if (captured > 10) {
+        window.location = './results/index.html';
+    } else {
+        renderNewPokemon();
+    }
+});
