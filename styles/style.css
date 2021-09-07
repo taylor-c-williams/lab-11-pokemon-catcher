@@ -31,6 +31,11 @@ video {
     right: -200;
     opacity: 15%;
 }
+audio{
+	font-family: 'DotGothic16', sans-serif;
+	border:1px dotted;
+	border-radius: 10px;;
+}
 
 .audio-wrapper{
     display: flex;
