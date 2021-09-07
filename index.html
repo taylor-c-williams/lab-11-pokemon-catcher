@@ -1,61 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./styles/style.css" />
+		<title>Dr. Oak's Poke-catcher</title>
+	</head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./styles/style.css">
-    <title>Dr. Oak's Poke-catcher</title>
-</head>
+	<body>
+		<video id="videoBG" autoplay muted loop>
+			<source src="./assets/videoplayback.mp4" type="video/mp4" />
+		</video>
+		<div class="content-wrapper">
+			<header>Catch a Pokemon!</header>
+			<content>
+				<form>
+					<label>
+						<img height="300" alt="A wild Pokemon has appeared!" />
+						<input type="radio" id="radio1" name="wild-pokemon" />
+					</label>
+					<label>
+						<img height="300" alt="A wild Pokemon has appeared!" />
+						<input type="radio" id="radio2" name="wild-pokemon" />
+					</label>
+					<label>
+						<img height="300" alt="A wild Pokemon has appeared!" />
+						<input type="radio" id="radio3" name="wild-pokemon" />
+					</label>
+					<p></p>
+					<div class="button-wrapper">
+						<button id="catch">Catch!</button>
+					</div>
+					<p></p>
+				</form>
+			</content>
+		</div>
+		<div class="audio-wrapper">
+			<audio controls id="volume-set">
+				<source src="./assets/lavendermusic.mp3" type="audio/mp3" />
+			</audio>
+		</div>
 
-<body>
-    <video id="videoBG"  autoplay muted loop>
-        <source src="./assets/videoplayback.mp4" type="video/mp4">
-    </video>
-<div class = "content-wrapper">
-    <header>
-        Catch a Pokemon!
-    </header>
-<content>
-    <form>
-        <label>
-            <img height="300" alt="A wild Pokemon has appeared!"/>
-            <input type="radio" id="radio1" name="wild-pokemon">
-
-        </label>
-        <label>
-            <img height="300" alt="A wild Pokemon has appeared!"/>
-            <input type="radio" id="radio2" name="wild-pokemon">
-
-        </label>
-        <label>
-            <img height="300" alt="A wild Pokemon has appeared!"/>
-            <input type="radio" id="radio3" name="wild-pokemon">
- 
-        </label>
-        <p></p>
-        <div class="button-wrapper">
-           
-        <button id="catch">Catch!</button>
-
-    </div>
-    <p></p>
-    </form>
-
-</content>
-
-</div>
-<div class="audio-wrapper">
-<audio controls id="volume-set">
-    <source src="./assets/lavendermusic.mp3" type="audio/mp3">
-</audio>
-</div>
-
-    <script type="module" src="./app.js"></script>
-</body>
-
+		<script type="module" src="./app.js"></script>
+	</body>
 </html>
