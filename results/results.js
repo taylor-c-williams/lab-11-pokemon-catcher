@@ -31,11 +31,11 @@ const myChart = new Chart(ctx, { //eslint-disable-line
             {
                 label: 'Times Captured',
                 data: arrayOfCaptures,
-                backgroundColor: 'rgba(128, 185, 24,0.9)', 
-                borderColor: 'rgba(238, 239, 32,1)',
-                pointBorderColor: '#fff',
+                backgroundColor: 'rgba(255, 109, 0,0.7)', 
+                borderColor: '#A7F323',
+                pointBorderColor: 'rgba(255, 109, 0,0.7)',
                 pointBackgroundColor: 'rgba(179,181,198,1)',
-                borderWidth: 5,
+                borderWidth: 4,
                 hoverBorderWidth: 3,
                 hoverBorderColor:'#000',
                 type:'line'
@@ -53,7 +53,7 @@ const myChart = new Chart(ctx, { //eslint-disable-line
         ]
     },
     options: {
-        maintainAspectRatio: false,
+        maintainAspectRatio: true,
         responsive: false,
         title: {
             text: 'Pokemon Encountered vs Pokemon Captured!'

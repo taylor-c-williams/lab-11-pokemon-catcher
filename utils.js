@@ -44,8 +44,8 @@ export function renderNewPokemon() {
     labels.forEach((label, i) => {
         const pokemonItem = wildPokemon[i];
         encounterPokemon(pokemonItem.id);
-        label.children[0].value = pokemonItem.id;
-        label.children[1].src = pokemonItem.url_image;
+        label.children[1].value = pokemonItem.id;
+        label.children[0].src = pokemonItem.url_image;
     });
 }
 

@@ -19,13 +19,25 @@ header {
 h1 {
     font-size:3em;
 }
+
 h2 {
     font-size:2em;
+}
+
+h3 {
+    font-size:1em;
 }
 
 subheader { 
 display: flex;
 justify-content: center;
+align-items: center;
+}
+
+.sub-sub-header{
+    display: flex;
+    justify-content: center;
+    margin-top:-15px;
 }
 
 .chart {
@@ -35,36 +47,45 @@ justify-content: center;
     margin:50px;
 }
 
-.button-wrapper{
+.button-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom:50px;
-    background-color: white;
+	background-color: white;
+    margin-bottom:100px;
+}
+
+.button-wrapper :link,
+:visited {
+	text-decoration: none;
+	color: black;
 
 }
 
-.button-wrapper :link, :visited {
-    text-decoration: none;
-    color:black;
-    font-size:2em;
-}
-
-button{
-    border: 1px dotted;
-    background-color: white;
-    font-family: 'Space Mono', monospace;    
+button {
+	font-family: "Space-Mono", monospace;
+	color: black;
+	background-color: white;
+	border: 1px dotted black;
+	font-size: 1em;
+	cursor: pointer;
+	box-shadow: -5px 5px 0px 1px rgba(255, 109, 0,0.7);
+	position: relative;
+	z-index: 2;
+	font-size: 2em;
+    border-radius:5px;
 }
 
 button:hover {
-	background-color: silver;
+	background-color: rgba(128, 185, 24,.9);
 	color: white;
 }
 
 button:active {
+	font-family: "Space-Mono", monospace;
 	background-color: #4a4140;
 	color: white;
 	border: 1px dotted black;
 	cursor: pointer;
-	box-shadow: 5px 5px 0px 1px #848484;
+	box-shadow: 5px 5px 0px 1px rgba(193, 158, 224,1);
 }

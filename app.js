@@ -12,7 +12,7 @@ form.addEventListener('submit', (e) => {
     const selectedPokemonId = data.get('wild-pokemon');
     gottaCatchEmAll(selectedPokemonId);
     if (captured > 10) {
-        window.location = './results/results.html';
+        window.location = './results/index.html';
     } else {
         renderNewPokemon();
     }
